@@ -22,8 +22,8 @@
 <meta name="twitter:title" content="AlagoBets · Public Track Record">
 <meta name="twitter:description" content="Every pick logged at release odds. Losses never removed. Tracking since Oct 7, 2026.">
 <meta name="twitter:image" content="https://alagocodes.github.io/alagobets-record/og.png">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,9 +57,7 @@ a{color:inherit}
 -webkit-backdrop-filter:saturate(140%) blur(12px);border-bottom:1px solid var(--bd)}
 .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:16px}
 .brand{display:flex;align-items:center;gap:8px;text-decoration:none}
-.logo-mark{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;
-background:linear-gradient(180deg,#1d2026,#121418);border:1px solid var(--bd2);color:var(--gold)}
-.logo-crown{display:block}
+.logo-mark{display:block;height:32px;width:auto}
 .wordmark{font-weight:800;font-size:17px;letter-spacing:-.01em}
 .brand-div{width:1px;height:16px;background:var(--bd2);margin:0 8px}
 .brand-sub{font-size:13px;color:var(--mu);font-weight:500}
@@ -74,8 +72,12 @@ text-decoration:none;border-radius:8px;padding:0 16px;height:40px;white-space:no
 .topbar .btn{height:36px;padding:0 16px}
 
 /* page head */
-.hero{padding:48px 0 32px}
-@media(min-width:768px){.hero{padding:64px 0 40px}}
+.hero{padding:40px 0 32px;display:grid;gap:24px}
+@media(min-width:768px){.hero{padding:56px 0 40px;grid-template-columns:1fr auto;align-items:center;gap:48px}}
+.hero-logo{order:-1}
+@media(min-width:768px){.hero-logo{order:0}}
+.lockup{display:block;width:152px;height:auto}
+@media(min-width:768px){.lockup{width:240px}}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
 h1{font-size:32px;line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:0 0 16px}
 @media(min-width:768px){h1{font-size:44px}}
@@ -95,7 +97,7 @@ main{padding-bottom:48px}
 .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:16px;flex-wrap:wrap}
 .h2{font-size:16px;font-weight:700;letter-spacing:-.01em;margin:0}
 .grid-2{display:grid;gap:24px}
-@media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}.grid-2.grid-2-3{grid-template-columns:2fr 1fr}}
 
 /* KPI strip */
 .kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:0}
@@ -167,7 +169,6 @@ th.num,td.num{text-align:right}
 .c-net{font-weight:600}
 .pill{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;font-size:12px;font-weight:600;
 border:1px solid var(--bd2);color:var(--tx2);white-space:nowrap}
-.tier-VIP{color:var(--gold);background:var(--gold-t);border-color:rgba(230,185,58,.35)}
 .res-W{color:var(--win);background:var(--win-t);border-color:rgba(47,209,127,.35)}
 .res-L{color:var(--loss);background:var(--loss-t);border-color:rgba(242,92,102,.35)}
 .res-PENDING{border-style:dashed;color:var(--mu)}
@@ -176,7 +177,7 @@ border:1px solid var(--bd2);color:var(--tx2);white-space:nowrap}
 .picks thead{display:none}
 .picks,.picks tbody{display:block}
 .picks tbody tr{display:grid;grid-template-columns:auto auto minmax(0,1fr);
-grid-template-areas:"sport sport res" "date date date" "event event event" "pick pick net" "odds units tier";
+grid-template-areas:"sport sport res" "date date date" "event event event" "pick pick net" "odds units units";
 gap:0;padding:16px;border:1px solid var(--bd);border-radius:var(--r-sm);background:var(--s2)}
 .picks tbody tr+tr{margin-top:8px}
 .picks tbody tr:nth-child(even){background:var(--s2)}
@@ -203,8 +204,7 @@ gap:0;padding:16px;border:1px solid var(--bd);border-radius:var(--r-sm);backgrou
 .empty{position:relative;overflow:hidden;text-align:center;padding:56px 24px;
 background:radial-gradient(600px 240px at 50% 0%,rgba(230,185,58,.08),transparent 70%),var(--s1)}
 @media(min-width:768px){.empty{padding:72px 48px}}
-.empty-mark{display:inline-grid;place-items:center;width:64px;height:64px;border-radius:16px;margin-bottom:24px;
-background:linear-gradient(180deg,#1f232a,#14161b);border:1px solid var(--bd2);color:var(--gold)}
+.empty-mark{display:block;height:72px;width:auto;margin:0 auto 24px;filter:drop-shadow(0 8px 24px rgba(230,185,58,.15))}
 .empty h2{font-size:28px;line-height:1.15;letter-spacing:-.02em;font-weight:800;margin:0 0 16px}
 @media(min-width:768px){.empty h2{font-size:32px}}
 .empty p{color:var(--tx2);max-width:560px;margin:0 auto 32px}
@@ -232,6 +232,8 @@ background:linear-gradient(180deg,#1f232a,#14161b);border:1px solid var(--bd2);c
 .cta-band{display:grid;gap:24px;align-items:center;border:1px solid rgba(230,185,58,.25);border-radius:16px;padding:32px 24px;
 background:linear-gradient(120deg,rgba(230,185,58,.10),rgba(230,185,58,.02) 55%),var(--s1)}
 @media(min-width:768px){.cta-band{grid-template-columns:1fr auto;padding:40px 48px}}
+@media(min-width:768px){.cta-band.stacked{grid-template-columns:1fr}}
+.cta-band.stacked p{max-width:640px}
 .cta-band h2{font-size:24px;line-height:1.2;letter-spacing:-.02em;margin:0 0 8px;font-weight:800}
 .cta-band p{margin:0;color:var(--tx2)}
 .cta-band .actions{display:flex;gap:8px;flex-wrap:wrap}
@@ -251,47 +253,47 @@ footer nav a:hover{color:var(--tx);text-decoration:underline}
 <header class="topbar">
 <div class="wrap">
 <a class="brand" href="https://alagocodes.github.io/alagobets-record/" aria-label="AlagoBets track record home">
-<span class="logo-mark"><svg class="logo-crown" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3 8.2l4.6 4L12 4.8l4.4 7.4L21 8.2 19.1 18H4.9z"/><path d="M4.9 19.6h14.2v1.2a1.2 1.2 0 0 1-1.2 1.2H6.1a1.2 1.2 0 0 1-1.2-1.2z"/><circle cx="3" cy="8" r="1.5"/><circle cx="12" cy="4.4" r="1.5"/><circle cx="21" cy="8" r="1.5"/></svg></span><span class="wordmark">AlagoBets</span>
+<picture><source srcset="logo-mark.webp" type="image/webp"><img class="logo-mark" src="logo-mark.png" width="152" height="160" alt="" decoding="async" fetchpriority="high"></picture><span class="wordmark">AlagoBets</span>
 <span class="brand-div" aria-hidden="true"></span><span class="brand-sub">Track Record</span></a>
-<a class="btn btn-gold" href="https://www.winible.com/alagobets5" rel="noopener">Join VIP</a>
+<a class="btn btn-gold" href="https://discord.gg/qv9yThhm7e" target="_blank" rel="noopener">Join free Discord</a>
 </div>
 </header>
-<main id="main"><div class="wrap"><div class="hero">
+<main id="main"><div class="wrap"><div class="hero"><div class="hero-text">
 <p class="eyebrow">Public track record</p>
 <h1>Every pick. Every result.</h1>
 <p class="lede">Every pick is logged at the odds when it's released, and losses are never removed. Judge the record for yourself.</p>
 <ul class="badges">
 <li class="badge"><span class="live" aria-hidden="true"></span><b>Updated daily</b></li>
 <li class="badge">Tracking since <b>Oct 7, 2026</b></li>
-<li class="badge">Last updated <b class="num"><!--STAMP-->Oct 6, 2026 · 7:05 AM ET<!--/STAMP--></b></li>
-</ul>
+<li class="badge">Last updated <b class="num"><!--STAMP-->Oct 6, 2026 · 7:13 AM ET<!--/STAMP--></b></li>
+</ul></div>
+<div class="hero-logo"><picture><source srcset="logo-lockup.webp" type="image/webp"><img class="lockup" src="logo-lockup.png" width="480" height="379" alt="AlagoBets" decoding="async" fetchpriority="high"></picture></div>
 </div><div class="stack"><section class="card empty" aria-labelledby="empty-h">
-<div class="empty-mark"><svg class="logo-crown" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M3 8.2l4.6 4L12 4.8l4.4 7.4L21 8.2 19.1 18H4.9z"/><path d="M4.9 19.6h14.2v1.2a1.2 1.2 0 0 1-1.2 1.2H6.1a1.2 1.2 0 0 1-1.2-1.2z"/><circle cx="3" cy="8" r="1.5"/><circle cx="12" cy="4.4" r="1.5"/><circle cx="21" cy="8" r="1.5"/></svg></div>
+<picture><source srcset="logo-mark.webp" type="image/webp"><img class="empty-mark" src="logo-mark.png" width="152" height="160" alt="" decoding="async" loading="lazy"></picture>
 <p class="eyebrow">Public record</p>
 <h2 id="empty-h">Tracking begins Oct 7, 2026</h2>
 <p>The first AlagoBets card goes out on Oct 7, 2026. From that day on, every play lands here before it starts, with its odds and units, and stays here once it's graded, win or loss.</p>
-<div class="actions"><a class="btn btn-gold btn-lg" href="https://www.winible.com/alagobets5" rel="noopener">Get the daily card on Winible</a>
-<a class="btn btn-ghost btn-lg" href="https://x.com/alagobets" rel="noopener">Follow @alagobets</a></div>
+<div class="actions"><a class="btn btn-gold btn-lg" href="https://discord.gg/qv9yThhm7e" target="_blank" rel="noopener">Join the free AlagoBets Community</a><a class="btn btn-ghost btn-lg" href="https://www.winible.com/alagobets5" target="_blank" rel="noopener">Free picks on Winible</a><a class="btn btn-ghost btn-lg" href="https://x.com/alagobets" target="_blank" rel="noopener">Follow @alagobets</a></div>
 <div class="preview" aria-label="What this page will show">
 <div class="pv"><div class="skel" aria-hidden="true"><i style="height:40%"></i><i style="height:70%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:65%"></i></div>
 <p class="pv-t">Live record</p><p class="pv-d">Record, net units, ROI and win % across every graded pick.</p></div>
 <div class="pv"><div class="skel" aria-hidden="true"><i style="height:20%"></i><i style="height:35%"></i><i style="height:30%"></i><i style="height:55%"></i><i style="height:75%"></i><i style="height:70%"></i></div>
 <p class="pv-t">Units over time</p><p class="pv-d">A running chart of cumulative units, dips included.</p></div>
 <div class="pv"><div class="skel" aria-hidden="true"><i style="height:100%"></i><i style="height:100%"></i><i style="height:100%"></i></div>
-<p class="pv-t">Full pick log</p><p class="pv-d">Every pick with odds, units, tier and result, split by VIP, Free and sport.</p></div>
+<p class="pv-t">Full pick log</p><p class="pv-d">Every pick with odds, units and result, plus a split by sport.</p></div>
 </div>
 </section><section aria-labelledby="trust-h">
 <div class="section-head"><p class="eyebrow">Methodology</p><h2 id="trust-h" class="h2">How picks are logged and graded</h2></div>
-<div class="trust"><div class="trust-item"><div class="trust-n" aria-hidden="true">1</div><h3>Logged before kickoff</h3><p>Each pick is recorded when it&#x27;s released, before the event starts, with the odds, units and tier (VIP or Free).</p></div><div class="trust-item"><div class="trust-n" aria-hidden="true">2</div><h3>Release odds, no edits</h3><p>Every pick is logged at the odds when it&#x27;s released. Lines are never adjusted after the fact.</p></div><div class="trust-item"><div class="trust-n" aria-hidden="true">3</div><h3>Losses are never removed</h3><p>Wins, losses, pushes and voids all stay in the log permanently. Nothing gets deleted.</p></div><div class="trust-item"><div class="trust-n" aria-hidden="true">4</div><h3>Graded every morning</h3><p>Results are graded the next morning. A win pays units × odds/100 (plus odds) or units × 100/|odds| (minus odds); a loss costs the units risked; a push is 0. ROI = net units ÷ units risked.</p></div></div></section><section class="cta-band" aria-labelledby="cta-h">
-<div><h2 id="cta-h">Get the full daily card</h2>
-<p>AlagoBets VIP: the complete AI-model card with odds and units on every play, tracked publicly on this page.</p></div>
-<div class="actions"><a class="btn btn-gold btn-lg" href="https://www.winible.com/alagobets5" rel="noopener">Join VIP on Winible</a></div>
+<div class="trust"><div class="trust-item"><div class="trust-n" aria-hidden="true">1</div><h3>Logged before kickoff</h3><p>Each pick is recorded when it&#x27;s released, before the event starts, with the odds and units.</p></div><div class="trust-item"><div class="trust-n" aria-hidden="true">2</div><h3>Release odds, no edits</h3><p>Every pick is logged at the odds when it&#x27;s released. Lines are never adjusted after the fact.</p></div><div class="trust-item"><div class="trust-n" aria-hidden="true">3</div><h3>Losses are never removed</h3><p>Wins, losses, pushes and voids all stay in the log permanently. Nothing gets deleted.</p></div><div class="trust-item"><div class="trust-n" aria-hidden="true">4</div><h3>Graded every morning</h3><p>Results are graded the next morning. A win pays units × odds/100 (plus odds) or units × 100/|odds| (minus odds); a loss costs the units risked; a push is 0. ROI = net units ÷ units risked.</p></div></div></section><section class="cta-band stacked" aria-labelledby="cta-h">
+<div><h2 id="cta-h">Join the free AlagoBets Community</h2>
+<p>Free plays, sports talk and game-day chat on Discord. Every play shared there is tracked right here, wins and losses.</p></div>
+<div class="actions"><a class="btn btn-gold btn-lg" href="https://discord.gg/qv9yThhm7e" target="_blank" rel="noopener">Join the free AlagoBets Community</a><a class="btn btn-ghost btn-lg" href="https://www.winible.com/alagobets5" target="_blank" rel="noopener">Free picks on Winible</a><a class="btn btn-ghost btn-lg" href="https://x.com/alagobets" target="_blank" rel="noopener">Follow @alagobets</a></div>
 </section></div></div></main><footer>
 <div class="wrap">
-<p class="disc">21+ | Picks are not guaranteed | Gambling problem? Call <a href="https://www.1800gambler.net" rel="noopener">1-800-GAMBLER</a></p>
+<p class="disc">21+ | Picks are not guaranteed | Gambling problem? Call <a href="https://www.1800gambler.net" target="_blank" rel="noopener">1-800-GAMBLER</a></p>
 <p>For entertainment and informational purposes only. Past results do not guarantee future results. Please bet responsibly and only where it's legal.</p>
 <div class="foot-row"><span>© 2026 AlagoBets</span>
-<nav aria-label="Footer"><a href="https://www.winible.com/alagobets5" rel="noopener">Winible store</a> · <a href="https://x.com/alagobets" rel="noopener">@alagobets on X</a> · <a href="https://www.1800gambler.net" rel="noopener">Responsible gaming</a></nav></div>
+<nav aria-label="Footer"><a href="https://discord.gg/qv9yThhm7e" target="_blank" rel="noopener">Free Discord community</a> · <a href="https://www.winible.com/alagobets5" target="_blank" rel="noopener">Winible</a> · <a href="https://x.com/alagobets" target="_blank" rel="noopener">@alagobets on X</a> · <a href="https://www.1800gambler.net" target="_blank" rel="noopener">Responsible gaming</a></nav></div>
 </div>
 </footer>
 </body>
