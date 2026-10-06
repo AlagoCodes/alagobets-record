@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AlagoBets Track Record | Every pick, wins and losses</title>
+<meta name="description" content="The complete, public AlagoBets pick history. Every pick logged at release odds, losses never removed. Tracking since Oct 7, 2026.">
+<meta property="og:title" content="AlagoBets 👑 Public Track Record">
+<meta property="og:description" content="Every pick logged at release odds. Losses never removed. Tracking since Oct 7, 2026.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b0b0d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23f5c542' d='M8 22l12 10 12-18 12 18 12-10-5 26H13z'/%3E%3Crect x='13' y='50' width='38' height='6' rx='2' fill='%23f5c542'/%3E%3C/svg%3E">
+<style>
+:root{--bg:#0b0b0d;--panel:#15151a;--panel2:#1c1c23;--line:#2a2a33;--text:#ececf1;--muted:#9a9aa8;
+--gold:#f5c542;--gold2:#d4a017;--win:#2ecc71;--loss:#ff5c5c;--push:#9aa3b2;--pend:#f5c542}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--gold)}
+.wrap{max-width:960px;margin:0 auto;padding:18px 14px 40px}
+header{text-align:center;padding:18px 0 6px}
+.crown{width:56px;height:56px;display:block;margin:0 auto 6px}
+h1{margin:0;font-size:28px;letter-spacing:.5px}
+h1 span{color:var(--gold)}
+.tag{color:var(--muted);margin:4px 0 0;font-size:14px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:12px 0 4px}
+.badge{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:4px 10px;font-size:12.5px;color:var(--muted)}
+.badge b{color:var(--text);font-weight:600}
+.cta{display:block;text-align:center;background:linear-gradient(180deg,var(--gold),var(--gold2));color:#141006;font-weight:800;
+text-decoration:none;border-radius:12px;padding:14px 18px;margin:16px auto;max-width:420px;font-size:16px;box-shadow:0 6px 20px rgba(245,197,66,.18)}
+.cta:active{transform:translateY(1px)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin:14px 0}
+h2{font-size:15px;text-transform:uppercase;letter-spacing:1.2px;color:var(--gold);margin:0 0 12px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:640px){.grid{grid-template-columns:repeat(4,1fr)}h1{font-size:34px}}
+.stat{background:var(--panel2);border-radius:10px;padding:12px;text-align:center}
+.stat .v{font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.8px}
+.pos{color:var(--win)}.neg{color:var(--loss)}.flat{color:var(--text)}
+.recent{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;font-size:14px;color:var(--muted)}
+.recent b{color:var(--text);font-variant-numeric:tabular-nums}
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{color:var(--muted);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.7px;position:sticky;top:0;background:var(--panel)}
+td.ev{white-space:normal;min-width:150px}td.pk{white-space:normal;min-width:120px;font-weight:600}
+td.num,th.num{text-align:right}
+tr.W td.res{color:var(--win);font-weight:700}tr.L td.res{color:var(--loss);font-weight:700}
+tr.P td.res,tr.V td.res{color:var(--push);font-weight:700}tr.PENDING td.res{color:var(--pend);font-style:italic}
+tr.W{background:rgba(46,204,113,.06)}tr.L{background:rgba(255,92,92,.06)}
+.tier{font-size:11px;font-weight:700;padding:2px 7px;border-radius:999px;border:1px solid var(--line)}
+.tier.VIP{color:#141006;background:var(--gold);border-color:var(--gold)}
+.small{font-size:12px;color:var(--muted)}
+.empty{text-align:center;padding:28px 10px}
+.empty .big{font-size:22px;font-weight:800;color:var(--gold);margin:6px 0}
+.promise{border-left:3px solid var(--gold);padding:10px 12px;background:var(--panel2);border-radius:8px;font-size:14px}
+.promise ul{margin:6px 0 0;padding-left:18px}
+footer{text-align:center;color:var(--muted);font-size:12.5px;margin-top:26px;padding-top:16px;border-top:1px solid var(--line)}
+footer .disc{color:var(--text);font-weight:600;margin-bottom:6px}
+</style></head><body><div class="wrap">
+<header><svg class="crown" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#d4a017"/></linearGradient></defs><path fill="url(#g)" d="M8 22l12 10 12-18 12 18 12-10-5 26H13z"/><rect x="13" y="50" width="38" height="6" rx="2" fill="url(#g)"/><circle cx="8" cy="20" r="4" fill="#f5c542"/><circle cx="32" cy="11" r="4" fill="#f5c542"/><circle cx="56" cy="20" r="4" fill="#f5c542"/></svg><h1>ALAGO<span>BETS</span></h1>
+<p class="tag">Bet smarter. Win louder. 👑 Public track record</p>
+<div class="badges"><span class="badge">Tracking since <b>Oct 7, 2026</b></span>
+<span class="badge">Last updated <b><!--STAMP-->Oct 6, 2026 6:58 AM ET<!--/STAMP--></b></span></div></header>
+<section class="panel empty">
+<div class="small">PUBLIC RECORD</div>
+<div class="big">Tracking starts Oct 7, 2026</div>
+<p>The first picks go up on Oct 7, 2026. From then on, every single play shows up here, wins and losses.</p>
+</section><a class="cta" href="https://www.winible.com/alagobets5" rel="noopener">👑 Get the daily card on Winible</a><section class="panel"><h2>How this record works</h2><div class="promise">
+<b>Every pick is logged at the odds when it's released, and losses are never removed.</b>
+<ul><li>Picks are recorded before the game starts, with odds, units and tier (VIP or Free).</li>
+<li>Results are graded the next morning. Pending picks stay marked as pending until they're graded.</li>
+<li>Units: a win pays units × odds/100 on plus odds or units × 100/|odds| on minus odds, a loss costs the units risked, and a push is 0.</li>
+<li>ROI = net units ÷ units risked on graded wins and losses.</li></ul></div></section><a class="cta" href="https://www.winible.com/alagobets5" rel="noopener">Join AlagoBets on Winible →</a>
+<footer><div class="disc">21+ | Picks are not guaranteed | Gambling problem? Call 1-800-GAMBLER</div>
+<div>AlagoBets · <a href="https://www.winible.com/alagobets5" rel="noopener">winible.com/alagobets5</a> · <a href="https://x.com/alagobets" rel="noopener">@alagobets on X</a></div>
+<div style="margin-top:6px">For entertainment and informational purposes. Past results don't guarantee future results.</div>
+</footer></div></body></html>
